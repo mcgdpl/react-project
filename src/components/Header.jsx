@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Heade component
  */
 function Header() {
+    const navigate = useNavigate();
+
+    // Logout
+    const handlLogOut = () => {
+        localStorage.removeItem('authToken');
+        navigate('/login');
+    }
+
     return(
         <>
         <div className="navbar bg-stone-50 border-b">
@@ -62,8 +70,8 @@ function Header() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a href="/login" className="me-3">Login</a>
-                <a href="/register">Register</a>
+                <a href="/profile" className="me-3">Profile</a>
+                <a href="" onClick={handlLogOut}>Logout</a>
             </div>
         </div>
         </>

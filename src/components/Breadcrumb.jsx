@@ -1,7 +1,7 @@
 const Breadcrumb = ({title}) => {
     return(
         <div className="flex justify-between mb-3">
-            <div className="text-2xl">{title}</div>
+            <div className="text-2xl border-b-2 border-orange-400">{title}</div>
             <div>
                 <div className="breadcrumbs text-sm">
                     <ul>
