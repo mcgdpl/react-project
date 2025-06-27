@@ -26,7 +26,7 @@ function Users() {
             setLoading(false);
         })
     }, []);
-
+    
     // Handle input change
     const handleInputChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
@@ -35,14 +35,14 @@ function Users() {
     // Handle submit
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        
+        // `Basic ${btoa('smartuser:piBlaPlrs2025')}`
         try {
-            const resp = await axios.post('http://10.99.0.10/cgd/Polaris/smartPayment/response', formData, {
-                headers: {
-                    Authorization: `Basic ${btoa('smartuser:piBlaPlrs2025')}`,
-                },
-            });
+            const headers = {
+                'Content-Type': 'application/json',
+                Authorization: `Basic ${btoa('smartuser:piBlaPlrs2025')}`,
+            };
+            // const resp = await axios.post('http://test.crm.meghagas.in/Polaris/smartPayment/response', formData, {
+            const resp = await axios.post('http://10.99.0.10/cgd/Polaris/smartPayment/response', formData, { headers } );
             console.log(resp);
         }
         catch(err) {
@@ -60,7 +60,7 @@ function Users() {
                     <table className="table border">
                         <thead>
                             <tr className="bg-base-200 text-sm">
-                                <th className="border" width="1%" nowrap>S.No</th>
+                                <th className="border" width="1%">S.No</th>
                                 <th className="border">Name</th>
                                 <th className="border">Email</th>
                                 <th className="border">Phone</th>

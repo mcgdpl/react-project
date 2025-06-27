@@ -58,10 +58,10 @@ function Header() {
                         <details>
                             <summary>Business</summary>
                             <ul className="p-2">
-                                <li><a>Domestic PNG</a></li>
-                                <li><a>CNG</a></li>
-                                <li><a>Commercial PNG</a></li>
-                                <li><a>Industrial PNG</a></li>
+                                <li><a href="#">Domestic PNG</a></li>
+                                <li><a href="#">CNG</a></li>
+                                <li><a href="#">Commercial PNG</a></li>
+                                <li><a href="#">Industrial PNG</a></li>
                             </ul>
                         </details>
                     </li>
